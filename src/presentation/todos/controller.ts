@@ -16,6 +16,7 @@ export class TodosController {
   //* Dependency Injection
   constructor() {}
   public getTodos = (req: Request, res: Response) => {
+    console.log("Get todos");
     res.json(todos);
   };
 
