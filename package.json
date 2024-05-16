@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@9.1.0",
+  "engines.node": "22",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsnd --respawn --clear src/app.ts",
     "build": "rimraf ./dist && tsc",
-    "start": "pnpm run build && node dist/app.js"
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
