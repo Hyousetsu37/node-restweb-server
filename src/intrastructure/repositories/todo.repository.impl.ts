@@ -4,7 +4,7 @@ import {
   TodoEntity,
   TodoRepository,
   UpdateTodoDto,
-} from "../../../domain";
+} from "../../domain";
 
 export class TodoRepositoryImpl implements TodoRepository {
   //

@@ -1,3 +1,3 @@
-import { PrismaClient } from "@prisma/client";
+import * as prismaCl from "@prisma/client";
 
-export const prisma = new PrismaClient();
+export const prisma = new prismaCl.PrismaClient();
