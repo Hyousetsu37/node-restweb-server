@@ -6,6 +6,12 @@ import {
   UpdateTodoDto,
 } from "../../domain";
 
+interface Todo {
+  id?: number;
+  text?: string;
+  completedAt?: Date | null;
+}
+
 export class TodoDatasourceImpl implements TodoDatasource {
   async create(createTodoDto: CreateTodoDto): Promise<TodoEntity> {
     const todo = await prisma.todo.create({
@@ -15,7 +21,7 @@ export class TodoDatasourceImpl implements TodoDatasource {
   }
   async getAll(): Promise<TodoEntity[]> {
     const todos = await prisma.todo.findMany();
-    return todos.map((todo) => TodoEntity.fromObject(todo));
+    return todos.map((todo: Todo) => TodoEntity.fromObject(todo));
   }
   async findById(id: number): Promise<TodoEntity> {
     const todo = await prisma.todo.findFirst({ where: { id } });
